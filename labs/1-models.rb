@@ -9,11 +9,59 @@ Contact.destroy_all
 # **************************
 
 # 1a. check out the schema file
+# name, url, city, state, slogan for company
+# first_name, last_name, email, phone_number, company_id for contact
+
 # 1b. check out the model file
 
 # 2. create 1-2 new contacts for each company (they can be made up)
+amazon = Company.where({name: "Amazon.com, Inc."})[0]
+amazon_id = amazon.id
+
+new_contact = Contact.new
+new_contact.first_name = "Andy" 
+new_contact.last_name = "Jassy"
+new_contact.email = "andy@amazon.com"
+new_contact.company_id = amazon_id
+new_contact.save
+
+apple = Company.where({name: "Apple, Inc."})[0]
+apple_id = apple.id
+
+new_contact = Contact.new
+new_contact.first_name = "Craig" 
+new_contact.last_name = "Federighi"
+new_contact.email = "craig@apple.com"
+new_contact.company_id = apple_id
+new_contact.save
+
+tesla = Company.where({name:"Tesla,Inc."})[0]
+tesla_id = tesla.id
+
+new_contact = Contact.new
+new_contact.first_name = "Elon" 
+new_contact.last_name = "Musk"
+new_contact.email = "elon@tesla.com"
+new_contact.company_id = tesla_id
+new_contact.save
+
+apple  = Company.where({name:"Apple, Inc."})[0]
+apple_id = apple.id 
+
+new_contact = Contact.new
+new_contact.first_name = "Tim" 
+new_contact.last_name = "Cook"
+new_contact.email = "tim@apple.com"
+new_contact.company_id = apple_id
+new_contact.save
 
 # 3. write code to display how many contacts are in the database AND each contact's info (name, email), e.g.:
+
+puts "Contacts: #{Contact.all.count}"
+all_contacts = Contact.all
+for contact in all_contacts
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+end  
 
 # ---------------------------------
 # Contacts: 4
