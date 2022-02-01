@@ -28,7 +28,7 @@ for company in Company.all
     end 
 end
 
-#This is the long way below that doesn't do a double for loop, originally odne in class 
+#This is the long way below that doesn't do a double for loop, originally done in class 
 #apple = Company.where({name:"Apple, Inc."})[0]
 
 #puts "#{apple.name}"
